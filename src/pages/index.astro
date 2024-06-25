@@ -3,17 +3,20 @@ import Layout from '../layouts/Layout.astro';
 import GitHub from '../components/icons/GitHub.astro';
 import LinkedIn from '../components/icons/LinkedIn.astro';
 import File from '../components/icons/File.astro';
+import Suitcase from '../components/icons/Suitcase.astro';
 import SocialPills from '../components/SocialPills.astro'
+import SuitCase from '../components/icons/Suitcase.astro';
 ---
 
 <Layout title="Portfolio Omar Romero">
-	<main class="mx-auto p-4 w-[640px]">
+	<main class="mx-auto w-[640px] flex gap-16 flex-col mt-16">
 		<section id="presentation" class="flex gap-10">
 			<figure>
-				<img src="./public/photo.webp" alt="Omar Romero" class="rounded-full w-40 h-40 object-cover">
+				<img src="./public/photo.webp" alt="Omar Romero" 
+				class="rounded-full w-40 h-40 object-cover shadow-lg shadow-primary shadow-[0_0_10px_6px_primary]">
 			</figure>
 			<section class="flex flex-col gap-3">
-				<h1 class="font-bold text-primary text-4xl">Hi, I'm Omar Romero</h1>
+				<h1 class="font-bold text-primary text-[40px] leading-tight">Hi, I'm Omar Romero</h1>
 				<div class="text-2xl">
 					<p class="text-secondary">Web developer from Mexico,</p>
 					<p>I like to work in great things.</p>
@@ -41,16 +44,19 @@ import SocialPills from '../components/SocialPills.astro'
 				</div>
 			</section>
 		</section>
-		<section id="experience">
-			<h2>Experience</h2>
-			<section>
-				<div>
-					<h3>Full Stack Developer</h3>
-					<p>Secretariat of Finance of Campeche</p>
-					<p>2021 - Current position</p>
+		<section id="experience" class="flex flex-col gap-10">
+			<h2 class="text-primary text-3xl flex font-bold gap-2 items-center">
+				<SuitCase class="size-8"/>
+				Experience
+			</h2>
+			<section class="flex gap-4">
+				<div class="text-nowrap flex flex-col">
+					<h3 class="text-xl font-medium text-secondary mb-[5px]">Full Stack Developer</h3>
+					<p class="text-base font-bold">Secretariat of Finance of Campeche</p>
+					<p class="font-sm">2021 - Current position</p>
 				</div>
-				<div>
-					<p>I developed web applications, mainly with React, 
+				<div class="pl-2 border-l-2 border-secondary" >
+					<p class="leading-tight">I developed web applications, mainly with React, 
 					.Net and SQL server. Automation of key processes in payroll, 
 					as well as tools that lighten the workload of my colleagues.</p>
 				</div>
