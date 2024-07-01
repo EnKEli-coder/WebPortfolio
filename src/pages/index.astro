@@ -6,16 +6,35 @@ import File from '../components/icons/File.astro';
 import Suitcase from '../components/icons/Suitcase.astro';
 import SocialPills from '../components/SocialPills.astro'
 import SuitCase from '../components/icons/Suitcase.astro';
+import ExperienceArticle from '../components/ExperienceArticle.astro';
+
+const experienceList = [
+  {
+    "positon": "Full Stack Developer",
+    "company": "Secretariat of Finance of Campeche",
+    "period": "2021 - Current position",
+    "description" : `I develop web applications, mainly with React, .Net and SQL server. 
+                    Automation of key processes in payroll, as well as tools that lighten 
+                    the workload of my colleagues`,
+  },
+  {
+    "positon": "Web developer",
+    "company": "Freelance",
+    "period":  "Since 2023",
+    "description": `Together with a colleague, we developed a point of sale web application for a bakery, 
+    and is in the process of adaptation to offer it as a service to other customers, plus other small jobs like a wedding invitation page.`,
+  },
+]
 ---
 
 <Layout title="Portfolio Omar Romero">
-	<main class="mx-auto w-[640px] flex gap-16 flex-col mt-16">
-		<section id="presentation" class="flex gap-10">
+	<main class="mx-auto w-[640px] flex flex-col">
+		<section id="presentation" class="flex gap-10 py-32">
 			<figure>
 				<img src="./public/photo.webp" alt="Omar Romero" 
-				class="rounded-full w-40 h-40 object-cover shadow-lg shadow-primary shadow-[0_0_10px_6px_primary]">
+				class="rounded-full w-40 h-40 object-cover shadow-primary shadow-[0px_0px_10px_6px_primary] border border-primary">
 			</figure>
-			<section class="flex flex-col gap-3">
+			<div class="flex flex-col gap-3">
 				<h1 class="font-bold text-primary text-[40px] leading-tight">Hi, I'm Omar Romero</h1>
 				<div class="text-2xl">
 					<p class="text-secondary">Web developer from Mexico,</p>
@@ -42,33 +61,29 @@ import SuitCase from '../components/icons/Suitcase.astro';
 						Download CV
 					</SocialPills>
 				</div>
-			</section>
+			</div>
 		</section>
 		<section id="experience" class="flex flex-col gap-10">
 			<h2 class="text-primary text-3xl flex font-bold gap-2 items-center">
 				<SuitCase class="size-8"/>
 				Experience
 			</h2>
-			<section class="flex gap-4">
-				<div class="text-nowrap flex flex-col">
-					<h3 class="text-xl font-medium text-secondary mb-[5px]">Full Stack Developer</h3>
-					<p class="text-base font-bold">Secretariat of Finance of Campeche</p>
-					<p class="font-sm">2021 - Current position</p>
-				</div>
-				<div class="pl-2 border-l-2 border-secondary" >
-					<p class="leading-tight">I developed web applications, mainly with React, 
-					.Net and SQL server. Automation of key processes in payroll, 
-					as well as tools that lighten the workload of my colleagues.</p>
-				</div>
-			</section>
+      <div class="border-l border-white flex flex-col gap-16 relative">
+        {
+          experienceList.map(item => (
+            <ExperienceArticle
+              position={item.positon}
+              company={item.company}
+              period={item.period}
+              description={item.description}
+            />
+          ))}
+      </div>
 		</section>
-		<section id="projects">
+		<section id="projects" class="pt-24">
 			<h2>Projects</h2>
-			<section>
-
-			</section>
 		</section>
-		<section id="about-me">
+		<section id="about-me" class="pt-24">
 			<h2>About me</h2>
 			<p>
 				
@@ -76,6 +91,3 @@ import SuitCase from '../components/icons/Suitcase.astro';
 		</section>
 	</main>
 </Layout>
-
-<style>
-</style>
